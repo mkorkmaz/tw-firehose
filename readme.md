@@ -42,7 +42,7 @@ $ python3 ./Firehose.py
 
 ### Ubuntu Upstart Service
 
-Create a configuration file at **/etc/init/tw_Firehose.conf** with following contents. Change the file path according to your setup.
+Create a configuration file at **/etc/init/tw_firehose.conf** with following contents. Change the file path according to your setup.
 
 ```
 description "Twitter Firehose Filter Service"
@@ -55,11 +55,11 @@ respawn
 setuid nobody
 setgid nogroup
 
-exec python3 /home/userhome/Firehose.py
+exec python3 /home/userhome/firehose.py
 ```
 
 **Service management**
 
 ```
-sudo service tw_Firehose start|stop|restart
+sudo service tw_firehose start|stop|restart
 ```
