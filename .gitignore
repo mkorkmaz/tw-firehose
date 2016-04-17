@@ -1,0 +1,6 @@
+#system and ide
+.DS_Store
+.idea
+__pycache__
+# app
+config.ini
