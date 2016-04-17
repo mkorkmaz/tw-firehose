@@ -1,10 +1,10 @@
 # Twitter Firehose Service
 
-A simple [Twitter Firehose  Filter Service](https://dev.twitter.com/streaming/overview) script writter in Python.
+A simple [Twitter Firehose  Filter Service](https://dev.twitter.com/streaming/overview) script written in Python.
 It simply collects filtered tweets and stores them on Elasticsearch.
 
 ###Tags
-\#python, #python3, #twiter, #streamingapi, #firehose, #elasticsearch
+\#python, #python3, #twiter, #streamingapi, #Firehose, #elasticsearch
 
 ### Installation
 Install the latest versions of required packages
@@ -19,16 +19,16 @@ You can find and/or create them at "Keys and Access Tokens" tab of your Twitter 
 ### Configuration
 Copy config.sample.ini to same folder with firehose.py as config.ini and change variables.
 
-One firehose service can serve for up to [400 keywords](https://dev.twitter.com/streaming/reference/post/statuses/filter).
+One Firehose service can serve for up to [400 keywords](https://dev.twitter.com/streaming/reference/post/statuses/filter).
 But I don't recommend to use more than 9-10 keywords.
 If you chose a common keyword as a filter, use one dedicated service for it.
 
 ### Server Configuration Recommendation
 I personally use mostly Ubuntu Server.
-For the firehose service I recommend you to use any VPS server has 1 CPU and 512MB RAM or 1 CPU and 1GB RAM.
-Since this service does not support multithreading more than 2 CPU core would be useless.
+For the Firehose service I recommend you to use any VPS server has 1 CPU and 512MB RAM or 1 CPU and 1GB RAM.
+Since this service does not support multi-threading more than 2 CPU core would be useless.
 
-Twitter allows one firehose connection per IP address. This means you can use only one firehose service for one server. [CitationNeeded].
+Twitter allows one Firehose connection per IP address. This means you can use only one Firehose service for one server. [CitationNeeded].
 
 Use more than one servers has small resources than one server has more resources if you need.
 
@@ -37,12 +37,12 @@ Read more details on Twitter's Streaming Documentation's [connection page](https
 ### Usage
 
 ```
-$ python3 ./firehose.py
+$ python3 ./Firehose.py
 ```
 
 ### Ubuntu Upstart Service
 
-Create a configuration file at **/etc/init/tw_firehose.conf** with following contents. Change the file path according to your setup.
+Create a configuration file at **/etc/init/tw_Firehose.conf** with following contents. Change the file path according to your setup.
 
 ```
 description "Twitter Firehose Filter Service"
@@ -55,11 +55,11 @@ respawn
 setuid nobody
 setgid nogroup
 
-exec python3 /home/userhome/firehose.py
+exec python3 /home/userhome/Firehose.py
 ```
 
 **Service management**
 
 ```
-sudo service tw_firehose start|stop|restart
+sudo service tw_Firehose start|stop|restart
 ```
