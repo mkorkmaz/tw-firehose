@@ -37,7 +37,7 @@ Read more details on Twitter's Streaming Documentation's [connection page](https
 ### Usage
 
 ```
-$ python3 ./Firehose.py
+$ python3 ./firehose.py
 ```
 
 ### Ubuntu Upstart Service
