@@ -1,4 +1,7 @@
 # Twitter Firehose Service
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mkorkmaz/tw-firehose/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mkorkmaz/tw-firehose/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/mkorkmaz/tw-firehose/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mkorkmaz/tw-firehose/build-status/master)
+
 
 A simple [Twitter Firehose  Filter Service](https://dev.twitter.com/streaming/overview) script written in Python.
 It simply collects filtered tweets and stores them on Elasticsearch.
