@@ -3,11 +3,11 @@
 [![Build Status](https://scrutinizer-ci.com/g/mkorkmaz/tw-firehose/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mkorkmaz/tw-firehose/build-status/master)
 
 
-A simple [Twitter Firehose  Filter Service](https://dev.twitter.com/streaming/overview) script written in Python.
-It simply collects filtered tweets and stores them on Elasticsearch.
+A simple [Twitter Firehose  Filter Service](https://dev.twitter.com/streaming/overview) script written in Python 3.
+It simply collects filtered tweets and stores them on filesystem as son format.
 
 ###Tags
-\#python, #python3, #twiter, #streamingapi, #Firehose, #elasticsearch
+\#python, #python3, #twiter, #streamingapi, #Firehose
 
 ### Installation
 Install the latest versions of required packages

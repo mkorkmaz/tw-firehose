@@ -3,7 +3,7 @@
 # author: mehmet@mkorkmaz.com
 # last_updated: 2016-03-12
 
-import ujson as json
+import simplejson as json
 import yaml
 
 
@@ -30,6 +30,13 @@ def is_json(my_json):
         return False
     return True
 
+
+def json_dumo(key, value, flags):
+    if flags == 1:
+        return value
+    if flags == 2:
+        return json.loads(value)
+    raise Exception("Unknown serialization format")
 
 def dict_isset_or(obj, indice, default_value):
 

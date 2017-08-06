@@ -1,4 +1,3 @@
-elasticsearch
+simplejson
 twython
-ujson
-yaml
+yaml>=3.08

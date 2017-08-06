@@ -4,8 +4,8 @@
 # last_updated: 2016-04-07
 
 import os
-from elasticsearch import Elasticsearch
 from twython import TwythonStreamer
+import simplejson as json
 import myutils
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -13,9 +13,6 @@ config = myutils.read_yaml(BASE_DIR + '/config.ini')
 additional_data = config['additional_data']
 id_prefix = str(additional_data['id_prefix'])  # makes sure that id_prefix is a string
 additional_data.pop("id_prefix", None)
-es = Elasticsearch([
-    {'host': config['data_store']['host']}
-])
 
 
 class MyStreamer(TwythonStreamer):
@@ -23,16 +20,9 @@ class MyStreamer(TwythonStreamer):
     def on_success(self, tweet_data):
         if 'text' in tweet_data:
             doc_id = id_prefix + '_' + tweet_data['id_str']
-            response = es.get(index=config['data_store']['index'], doc_type=config['data_store']['type'], id=doc_id,
-                              ignore=404)
-            does_exist = myutils.dict_isset_or(response, 'found', False)
-            if does_exist:
-                print("Document Exists, skipping:" + doc_id)
-            else:
-                data = {**additional_data, **tweet_data}
-                res = es.index(index=config['data_store']['index'], doc_type=config['data_store']['type'],
-                               id=doc_id, body=data)
-                print("Document indexed: " + str(res['created'])+doc_id)
+            data = {**additional_data, **tweet_data}
+            json.dump(data, open('./data/' + tweet_data['id_str'] + '.json', 'w'))
+            print("Document indexed: ", tweet_data['id_str'])
 
     def on_error(self, status_code, data):
         #  @TODO: Handle 420 errors
