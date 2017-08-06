@@ -4,7 +4,7 @@
 
 
 A simple [Twitter Firehose  Filter Service](https://dev.twitter.com/streaming/overview) script written in Python 3.
-It simply collects filtered tweets and stores them on filesystem as son format.
+It simply collects filtered tweets and stores them on filesystem as json format.
 
 ###Tags
 \#python, #python3, #twiter, #streamingapi, #Firehose
