@@ -66,3 +66,33 @@ exec python3 /home/userhome/firehose.py
 ```
 sudo service tw_firehose start|stop|restart
 ```
+
+
+### Ubuntu Systemd Service
+
+Create a configuration file at **/etc/systemd/system/tw_firehose.service** with following contents. Change the file path according to your setup.
+
+```
+[Unit]
+Description=Twitter Firehose Filter Service
+
+[Service]
+Type=simple
+User=user
+Group=user
+WorkingDirectory=/home/userhome
+PIDFile=/var/run/tw-firehose.pid
+ExecStart=/usr/bin/python3 /home/userhome/firehose.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+**Service management**
+
+```
+sudo systemctl daemon-reload
+systemctl start|stop|restart tw_firehose
+
