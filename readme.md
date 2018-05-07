@@ -94,5 +94,5 @@ WantedBy=multi-user.target
 
 ```
 sudo systemctl daemon-reload
-systemctl start|stop|restart tw_firehose
+sudo systemctl start|stop|restart tw_firehose
 
